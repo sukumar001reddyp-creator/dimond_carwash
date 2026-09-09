@@ -26,7 +26,7 @@
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-            <div class="fixed top-24 right-4 z-55 space-y-2">
+            <div class="fixed top-20 right-4 z-55 space-y-2">
                 {% for category, message in messages %}
                     <div class="bg-blue-600 text-white px-6 py-4 rounded-xl shadow-2xl font-bold flex items-center gap-3 border border-blue-400">
                         <i class="fa-solid fa-circle-check text-xl"></i>
@@ -39,9 +39,10 @@
 
     <!-- Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+        <!-- Changed max-w-7xl to max-w-6xl for better 100% zoom fit -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2 sm:space-x-3">
-                <div class="bg-blue-600 text-white p-2 sm:p-2.5 rounded-xl sm:rounded-2xl text-xl sm:text-2xl shadow-lg shadow-blue-600/30">
+                <div class="bg-blue-600 text-white p-2 rounded-xl text-xl shadow-lg shadow-blue-600/30">
                     <i class="fa-solid fa-gem"></i>
                 </div>
                 <div>
@@ -51,7 +52,7 @@
                 </div>
             </div>
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+            <nav class="hidden lg:flex items-center space-x-6 lg:space-x-8 text-sm font-medium text-slate-300">
                 <a href="#home" class="nav-link transition hover:text-white pb-1 active">Home</a>
                 <a href="#about" class="nav-link transition hover:text-white pb-1">About Us</a>
                 <a href="#services" class="nav-link transition hover:text-white pb-1">Services</a>
@@ -60,8 +61,8 @@
                 <a href="#contact" class="nav-link transition hover:text-white pb-1">Contact</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="tel:+971555181827" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl transition shadow-xl shadow-blue-600/30 text-xs sm:text-sm">
-                    <i class="fa-solid fa-phone"></i> <span class="hidden xs:inline">+971 55 518 1827</span>
+                <a href="tel:+971555181827" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 sm:px-5 py-2.5 rounded-xl transition shadow-xl shadow-blue-600/30 text-xs sm:text-sm">
+                    <i class="fa-solid fa-phone"></i> <span class="hidden sm:inline">+971 55 518 1827</span>
                 </a>
             </div>
         </div>
@@ -77,25 +78,27 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-36 pb-20 sm:pt-44 sm:pb-28 md:pt-56 md:pb-40 overflow-hidden bg-cover bg-center border-b border-slate-900">
+    <!-- Adjusted padding (pt-40) so it fits well in 1080p screens without scrolling -->
+    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-cover bg-center border-b border-slate-900">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent -z-10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="max-w-2xl">
                 <div class="text-[11px] sm:text-xs uppercase tracking-widest text-slate-300 font-bold mb-4 bg-slate-900/80 inline-block px-3 py-1 rounded-full border border-slate-800">
                     Top-Quality & Premium Professional Care
                 </div>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-6">
+                <!-- Reduced h1 text size slightly for 100% zoom balance -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none mb-6">
                     <span class="text-white drop-shadow-md">A Cleaner Car</span><br>
                     <span class="text-blue-500 drop-shadow-md">A Happier You</span>
                 </h1>
-                <p class="text-sm sm:text-base lg:text-lg text-slate-200 mb-8 sm:mb-10 leading-relaxed max-w-lg font-medium drop-shadow">
+                <p class="text-sm sm:text-base text-slate-200 mb-8 leading-relaxed max-w-lg font-medium drop-shadow">
                     Trusted by more than hundred thousand cars serviced in UAE. We offer a variety of premium blended car wash chemicals to ensure your wash lasts.
                 </p>
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 sm:mb-16">
-                    <a href="tel:+971555181827" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl transition shadow-xl shadow-blue-600/30 text-center flex items-center justify-center gap-3 text-sm sm:text-base">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+                    <a href="tel:+971555181827" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3.5 rounded-xl transition shadow-xl shadow-blue-600/30 text-center flex items-center justify-center gap-3 text-sm sm:text-base">
                         <i class="fa-solid fa-calendar-days text-lg"></i> Book a Mobile Wash
                     </a>
-                    <a href="#services" class="bg-slate-900/90 hover:bg-slate-800 text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border border-slate-700 transition text-center flex items-center justify-center gap-3 backdrop-blur-md text-sm sm:text-base">
+                    <a href="#services" class="bg-slate-900/90 hover:bg-slate-800 text-white font-semibold px-6 py-3.5 rounded-xl border border-slate-700 transition text-center flex items-center justify-center gap-3 backdrop-blur-md text-sm sm:text-base">
                         Explore 30+ Services <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
                 </div>
@@ -103,31 +106,31 @@
                 <!-- Badges Row -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-800 bg-slate-950/80 p-4 sm:p-5 rounded-2xl backdrop-blur-md border border-slate-800/80">
                     <div class="flex items-center gap-2.5">
-                        <div class="text-blue-400 text-xl sm:text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="text-blue-400 text-xl"><i class="fa-solid fa-leaf"></i></div>
                         <div>
-                            <div class="font-bold text-white text-[11px] sm:text-xs">Eco-Friendly</div>
-                            <div class="text-[10px] sm:text-[11px] text-slate-300 font-medium">Waterless Tech</div>
+                            <div class="font-bold text-white text-[11px]">Eco-Friendly</div>
+                            <div class="text-[10px] text-slate-300 font-medium">Waterless Tech</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <div class="text-blue-400 text-xl sm:text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="text-blue-400 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
                         <div>
-                            <div class="font-bold text-white text-[11px] sm:text-xs">100K+ Cars</div>
-                            <div class="text-[10px] sm:text-[11px] text-slate-300 font-medium">Serviced UAE</div>
+                            <div class="font-bold text-white text-[11px]">100K+ Cars</div>
+                            <div class="text-[10px] text-slate-300 font-medium">Serviced UAE</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <div class="text-blue-400 text-xl sm:text-2xl"><i class="fa-solid fa-droplet-slash"></i></div>
+                        <div class="text-blue-400 text-xl"><i class="fa-solid fa-droplet-slash"></i></div>
                         <div>
-                            <div class="font-bold text-white text-[11px] sm:text-xs">25-46 Gal</div>
-                            <div class="text-[10px] sm:text-[11px] text-slate-300 font-medium">Water Saved</div>
+                            <div class="font-bold text-white text-[11px]">25-46 Gal</div>
+                            <div class="text-[10px] text-slate-300 font-medium">Water Saved</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <div class="text-blue-400 text-xl sm:text-2xl"><i class="fa-solid fa-star"></i></div>
+                        <div class="text-blue-400 text-xl"><i class="fa-solid fa-star"></i></div>
                         <div>
-                            <div class="font-bold text-white text-[11px] sm:text-xs">30+ Services</div>
-                            <div class="text-[10px] sm:text-[11px] text-slate-300 font-medium">Pro Care</div>
+                            <div class="font-bold text-white text-[11px]">30+ Services</div>
+                            <div class="text-[10px] text-slate-300 font-medium">Pro Care</div>
                         </div>
                     </div>
                 </div>
@@ -137,12 +140,12 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 sm:py-24 bg-slate-900/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="about" class="py-16 md:py-20 bg-slate-900/40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div>
                     <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">About Diamond Car Wash</span>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-4 sm:mb-6">The leading eco-friendly car washing service in Abu Dhabi & Dubai</h2>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-4">The leading eco-friendly car washing service in Abu Dhabi & Dubai</h2>
                     <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-4">
                         Diamond Car Washing & Polishing doesn't require any external storage, water, or electrical supply to operate, reducing fixed costs to facilities management or business users. We use the latest in waterless technology.
                     </p>
@@ -176,89 +179,89 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+    <section id="services" class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Our Offerings</span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-4">More Than 30 Car Care Services</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mt-2 mb-4">More Than 30 Car Care Services</h2>
                 <p class="text-slate-400 text-sm sm:text-base">Your one-stop car care center offering basic washing to high-end detailing and maintenance.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-droplet"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Waterless Car Wash</h3>
+                    <h3 class="text-lg font-bold mb-2">Waterless Car Wash</h3>
                     <p class="text-slate-400 text-sm">Eco-safe exterior cleaning, polishing, and protecting in one pristine step.</p>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-broom"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Conventional Interior Cleaning</h3>
+                    <h3 class="text-lg font-bold mb-2">Conventional Interior</h3>
                     <p class="text-slate-400 text-sm">Thorough cleaning of interior compartments, dashboards, and seats.</p>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-car-rear"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Engine Bay Cleaning & Polishing</h3>
+                    <h3 class="text-lg font-bold mb-2">Engine Bay Polishing</h3>
                     <p class="text-slate-400 text-sm">Professional degreasing and shine restoration for your vehicle engine bay.</p>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Headlight Restoration</h3>
+                    <h3 class="text-lg font-bold mb-2">Headlight Restoration</h3>
                     <p class="text-slate-400 text-sm">Clear up cloudy or oxidized headlights for better nighttime clarity.</p>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-spray-can-sparkles"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Full Car Detailing & Paint Protection</h3>
+                    <h3 class="text-lg font-bold mb-2">Full Car Detailing</h3>
                     <p class="text-slate-400 text-sm">Complete protection coatings and deep restoration for car paint.</p>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl transition hover:border-blue-500/50">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg mb-4">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">Shampoo, Steaming & Disinfection</h3>
+                    <h3 class="text-lg font-bold mb-2">Shampoo & Steaming</h3>
                     <p class="text-slate-400 text-sm">Dry cleaning, hot steam treatment, and complete sterilization against germs.</p>
                 </div>
             </div>
-            <div class="mt-8 text-center bg-slate-900 border border-slate-800 p-5 sm:p-6 rounded-2xl">
+            <div class="mt-8 text-center bg-slate-900 border border-slate-800 p-5 rounded-2xl">
                 <p class="text-slate-300 text-sm sm:text-base font-medium">✨ We also provide <span class="text-blue-500 font-bold">Discounted prices for businesses and corporate contracts</span>.</p>
             </div>
         </div>
     </section>
 
     <!-- Why Us / Advantages Section -->
-    <section id="advantages" class="py-16 sm:py-24 bg-slate-900/40 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+    <section id="advantages" class="py-16 md:py-20 bg-slate-900/40 border-t border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Our Advantages</span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-4">Why Do People Trust Our Company?</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mt-2 mb-4">Why Do People Trust Our Company?</h2>
                 <p class="text-slate-400 text-sm sm:text-base">Trusted by thousands across UAE for reliability and superior green chemistry.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl relative">
-                    <div class="text-blue-500 font-black text-3xl mb-4">01</div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative">
+                    <div class="text-blue-500 font-black text-2xl mb-3">01</div>
                     <h3 class="text-lg font-bold mb-2">Versatility</h3>
                     <p class="text-slate-400 text-sm">We have a master specialized staff for comprehensive car care services.</p>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl relative">
-                    <div class="text-blue-500 font-black text-3xl mb-4">02</div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative">
+                    <div class="text-blue-500 font-black text-2xl mb-3">02</div>
                     <h3 class="text-lg font-bold mb-2">Goodwill</h3>
                     <p class="text-slate-400 text-sm">Delivering the absolute best quality service with maximum value.</p>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl relative">
-                    <div class="text-blue-500 font-black text-3xl mb-4">03</div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative">
+                    <div class="text-blue-500 font-black text-2xl mb-3">03</div>
                     <h3 class="text-lg font-bold mb-2">Professionalism</h3>
                     <p class="text-slate-400 text-sm">Executing every requested service precisely to your satisfaction.</p>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl relative">
-                    <div class="text-blue-500 font-black text-3xl mb-4">04</div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative">
+                    <div class="text-blue-500 font-black text-2xl mb-3">04</div>
                     <h3 class="text-lg font-bold mb-2">Loyalty</h3>
                     <p class="text-slate-400 text-sm">Licensed and well-adapted management systems ensuring high standards.</p>
                 </div>
@@ -267,31 +270,31 @@
     </section>
 
     <!-- How We Do (Waterless Method) -->
-    <section id="howto" class="py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+    <section id="howto" class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Step-by-Step Technique</span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-4">How We Do Waterless Wash</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mt-2 mb-4">How We Do Waterless Wash</h2>
                 <p class="text-slate-400 text-sm sm:text-base">Our precise multi-step procedure to keep your car immaculate and protected.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-blue-500 font-bold mb-2">Step 1 & 2</div>
+                    <div class="text-blue-500 font-bold text-sm mb-2">Step 1 & 2</div>
                     <h4 class="font-bold text-white mb-1">Shade & Towels</h4>
                     <p class="text-slate-400 text-xs leading-relaxed">Make sure the vehicle is parked in a shaded area and keep two clean microfiber towels ready.</p>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-blue-500 font-bold mb-2">Step 3 & 4</div>
-                    <h4 class="font-bold text-white mb-1">Shake & Spray Towel</h4>
+                    <div class="text-blue-500 font-bold text-sm mb-2">Step 3 & 4</div>
+                    <h4 class="font-bold text-white mb-1">Shake & Spray</h4>
                     <p class="text-slate-400 text-xs leading-relaxed">Shake the Auto Wash bottle and spray solution onto one folded microfiber towel until moist.</p>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-blue-500 font-bold mb-2">Step 5 & 6</div>
+                    <div class="text-blue-500 font-bold text-sm mb-2">Step 5 & 6</div>
                     <h4 class="font-bold text-white mb-1">Surface Application</h4>
                     <p class="text-slate-400 text-xs leading-relaxed">Spray directly onto a designated surface area and softly wipe with the moist towel.</p>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-blue-500 font-bold mb-2">Step 7 & 8</div>
+                    <div class="text-blue-500 font-bold text-sm mb-2">Step 7 & 8</div>
                     <h4 class="font-bold text-white mb-1">Immediate Buffing</h4>
                     <p class="text-slate-400 text-xs leading-relaxed">Immediately buff off any light haze with the second dry microfiber towel until polished.</p>
                 </div>
@@ -300,16 +303,16 @@
     </section>
 
     <!-- Contact & Booking Section -->
-    <section id="contact" class="py-16 sm:py-24 bg-slate-900/40 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="contact" class="py-16 md:py-20 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                 <div>
                     <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Get In Touch</span>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mt-2 mb-6">Book Your Mobile Car Wash Today</h2>
                     <p class="text-slate-400 text-sm sm:text-base mb-8 leading-relaxed">
                         Experience the ultimate first-class luxury car care at your home or office. Call us directly or fill out the booking request.
                     </p>
-                    <div class="space-y-4 text-slate-300">
+                    <div class="space-y-5 text-slate-300">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center text-lg shrink-0">
                                 <i class="fa-solid fa-phone"></i>
@@ -371,8 +374,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-8 sm:py-12 text-center text-xs sm:text-sm text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs sm:text-sm text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; 2026 Diamond Car Wash. All rights reserved.</div>
             <div>Designed for Diamond Car Wash (UAE)</div>
         </div>
