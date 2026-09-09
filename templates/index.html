@@ -9,8 +9,15 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Desktop Background */
         #home {
             background-image: url("{{ url_for('static', filename='images/hero-bg.png') }}");
+        }
+        /* Mobile Specific Vertical Background Image */
+        @media (max-width: 768px) {
+            #home {
+                background-image: url("{{ url_for('static', filename='images/hero-mobile.png') }}") !important;
+            }
         }
         /* Active nav item white underline style */
         nav a.active {
@@ -39,7 +46,6 @@
 
     <!-- Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
-        <!-- Changed max-w-7xl to max-w-6xl for better 100% zoom fit -->
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <div class="bg-blue-600 text-white p-2 rounded-xl text-xl shadow-lg shadow-blue-600/30">
@@ -62,7 +68,7 @@
             </nav>
             <div class="flex items-center gap-3">
                 <a href="tel:+971555181827" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 sm:px-5 py-2.5 rounded-xl transition shadow-xl shadow-blue-600/30 text-xs sm:text-sm">
-                    <i class="fa-solid fa-phone"></i> <span class="hidden sm:inline">+971 55 518 1827</span>
+                    <i class="fa-solid fa-phone"></i> <span>+971 55 518 1827</span>
                 </a>
             </div>
         </div>
@@ -78,15 +84,13 @@
     </header>
 
     <!-- Hero Section -->
-    <!-- Adjusted padding (pt-40) so it fits well in 1080p screens without scrolling -->
     <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-cover bg-center border-b border-slate-900">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent -z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950/90 lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-transparent -z-10"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="max-w-2xl">
-                <div class="text-[11px] sm:text-xs uppercase tracking-widest text-slate-300 font-bold mb-4 bg-slate-900/80 inline-block px-3 py-1 rounded-full border border-slate-800">
+                <div class="text-[11px] sm:text-xs uppercase tracking-widest text-amber-300 font-bold mb-4 bg-slate-950/70 inline-block px-3 py-1 rounded-full border border-amber-500/30">
                     Top-Quality & Premium Professional Care
                 </div>
-                <!-- Reduced h1 text size slightly for 100% zoom balance -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none mb-6">
                     <span class="text-white drop-shadow-md">A Cleaner Car</span><br>
                     <span class="text-blue-500 drop-shadow-md">A Happier You</span>
@@ -409,6 +413,8 @@
                 this.classList.add('active');
             });
         });
+
+    
     </script>
 </body>
 </html>

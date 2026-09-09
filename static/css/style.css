@@ -1,8 +1,37 @@
-/* Custom styles */
-html {
-    scroll-behavior: smooth;
+/* Single-page view layout styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
 }
+
 ::selection {
-    background-color: #06b6d4;
-    color: #020617;
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Hide all sections by default, display only the active one */
+section {
+    display: none;
+    min-height: calc(100vh - 100px);
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+section.active-section {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Navbar active item white underline style */
+nav a.active {
+    color: #ffffff !important;
+    font-weight: 700;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 4px;
 }
